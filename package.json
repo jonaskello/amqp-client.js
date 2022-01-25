@@ -4,7 +4,7 @@
   "description": "AMQP 0-9-1 client, both for browsers (WebSocket) and node (TCP Socket)",
   "type": "module",
   "main": "lib/amqp-client.cjs",
-  "types": "lib/types/amqp-client.d.ts",
+  "types": "lib/amqp-client.d.ts",
   "browser": "lib/amqp-websocket-client.mjs",
   "exports": {
     "import": "./dist/amqp-client.mjs",
