@@ -3,9 +3,9 @@
   "version": "1.3.2",
   "description": "AMQP 0-9-1 client, both for browsers (WebSocket) and node (TCP Socket)",
   "type": "module",
-  "main": "dist/amqp-client.cjs",
-  "types": "dist/types/amqp-client.d.ts",
-  "browser": "dist/amqp-websocket-client.mjs",
+  "main": "lib/amqp-client.cjs",
+  "types": "lib/types/amqp-client.d.ts",
+  "browser": "lib/amqp-websocket-client.mjs",
   "exports": {
     "import": "./dist/amqp-client.mjs",
     "require": "./dist/amqp-client.cjs"
@@ -17,15 +17,15 @@
     "docs": "typedoc --entryPoints src/index.ts --tsconfig tsconfig.typedoc.json",
     "lint": "eslint src",
     "test": "c8 ava",
-    "prebuild": "sed -i'' \"s/VERSION = .*/VERSION = '$npm_package_version'/\" src/amqp-base-client.ts && git add src/amqp-base-client.ts",
-    "build": "rm -rf dist && rollup -c && tsc --emitDeclarationOnly --module commonjs",
+    "clean": "rm -rf lib",
+    "build": "tsc",
     "prepack": "npm run build",
     "preversion": "npm test",
     "version": "npm run build"
   },
   "files": [
     "src/",
-    "dist/"
+    "lib/"
   ],
   "repository": "github:cloudamqp/amqp-client.js",
   "keywords": [
